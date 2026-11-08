@@ -1,0 +1,130 @@
+/* craft.css — layered over styles.css. Self-hosted fonts, ink botanicals, scrapbook photos. */
+@font-face{font-family:'Cormorant Garamond';font-weight:400;font-style:normal;font-display:swap;src:url(../fonts/cormorant-garamond-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:500;font-style:normal;font-display:swap;src:url(../fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-style:normal;font-display:swap;src:url(../fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:400;font-style:italic;font-display:swap;src:url(../fonts/cormorant-garamond-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:500;font-style:italic;font-display:swap;src:url(../fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-style:italic;font-display:swap;src:url(../fonts/cormorant-garamond-latin-600-italic.woff2) format('woff2')}
+@font-face{font-family:'DM Sans';font-weight:400;font-display:swap;src:url(../fonts/dm-sans-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'DM Sans';font-weight:500;font-display:swap;src:url(../fonts/dm-sans-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'DM Sans';font-weight:700;font-display:swap;src:url(../fonts/dm-sans-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Caveat';font-weight:500;font-display:swap;src:url(../fonts/caveat-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Caveat';font-weight:600;font-display:swap;src:url(../fonts/caveat-latin-600-normal.woff2) format('woff2')}
+
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.topbar{border-bottom:0}
+.topbar .sound-toggle{font:500 14px/1 'Caveat',cursive;letter-spacing:0;color:var(--muted)}
+.hero-inner{min-height:0}
+.hero-sub{font:italic 400 clamp(19px,2vw,24px)/1.45 'Cormorant Garamond',Georgia,serif;color:#6d6153}
+
+/* ---------- ink hibiscus: blooms, then sways ---------- */
+.flower-svg{overflow:visible}
+.flower-svg .fl{transform-box:fill-box;transform-origin:50% 50%;transform:scale(.08) rotate(-70deg);opacity:0}
+.flower-svg.in .fl{transform:none;opacity:1;transition:transform 1.9s cubic-bezier(.16,.84,.24,1) var(--d,0s),opacity .9s ease var(--d,0s)}
+.flower-svg.in{animation:sway 9s ease-in-out calc(var(--d,0s) + 2s) infinite alternate}
+@keyframes sway{from{rotate:-3deg}to{rotate:3deg}}
+.hf{position:absolute;z-index:1;width:clamp(78px,11vw,150px)}
+.hf-a{top:-1%;left:-6%;width:clamp(64px,8vw,104px);--d:.9s}.hf-b{top:36%;right:-6%;width:clamp(56px,7vw,92px);--d:1.4s}
+.hero-tiger{animation:rise 1.5s cubic-bezier(.2,.7,.2,1) .15s both,breathe 7s ease-in-out 1.8s infinite;transform-origin:50% 90%}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes breathe{50%{transform:scale(1.014)}}
+.hero-sprig path:first-child{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 2.4s ease .5s forwards}
+.hero-sprig path:not(:first-child){opacity:0;animation:leaf 1.2s ease 1.6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes leaf{to{opacity:1}}
+.hand-note{font-family:'Caveat',cursive;font-weight:500}
+
+/* tap the garden: plant a hibiscus */
+.garden-illustration{cursor:cell;touch-action:manipulation}
+.planted{position:absolute;width:clamp(54px,9vw,96px);margin:-4.5vw 0 0 -4.5vw;pointer-events:none;z-index:4;animation:fadeaway 14s ease-in forwards}
+.planted .fl{transform-box:fill-box;transform-origin:50% 50%;animation:plant 1.7s cubic-bezier(.16,.84,.24,1) both}
+@keyframes plant{from{transform:scale(.05) rotate(-80deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes fadeaway{0%,70%{opacity:1}100%{opacity:0}}
+
+/* ---------- sections: breathing room now that the labels are gone ---------- */
+.garden-heading-row,.memories-header{padding-top:clamp(40px,7vw,90px)}
+.garden-intro,.memories-header p{font:italic 400 clamp(19px,2vw,23px)/1.45 'Cormorant Garamond',Georgia,serif;color:#6d6153}
+.archive-item{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(21px,2.2vw,26px)}
+.memory-visual{box-shadow:0 14px 28px -14px rgba(60,40,20,.35);outline:10px solid #fffdf7;outline-offset:0}
+.memory-meet .memory-visual{transform:rotate(-.8deg)}.memory-runway .memory-visual{transform:rotate(.7deg)}
+.memory-copy h3,.unc-copy h3{font-family:'Cormorant Garamond',Georgia,serif}
+
+/* ---------- the scrapbook ---------- */
+.scrapbook{position:relative;padding:clamp(70px,10vw,140px) clamp(18px,4vw,56px) clamp(70px,9vw,120px);background:var(--paper-deep);background-image:radial-gradient(rgba(120,95,60,.07) 1px,transparent 1.4px);background-size:22px 22px}
+.sb-head,.spread,.spread-title{max-width:1180px;margin-left:auto;margin-right:auto}
+.sb-head{display:grid;grid-template-columns:1fr minmax(0,330px);gap:24px 56px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.sb-head h2{font:500 clamp(46px,7vw,96px)/.95 'Cormorant Garamond',Georgia,serif;letter-spacing:-.025em;margin:0;color:var(--ink)}
+.sb-head p{font:italic 400 clamp(19px,2vw,23px)/1.45 'Cormorant Garamond',Georgia,serif;color:#6d6153;margin:0}
+.spread-title{font:600 clamp(30px,3.4vw,42px)/1 'Caveat',cursive;color:var(--red);margin-top:clamp(36px,6vw,80px);margin-bottom:clamp(20px,3vw,40px);padding-left:4px}
+.spread{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(24px,4vw,56px) clamp(8px,1.6vw,22px);align-items:start}
+.spread>figure{grid-column:var(--ds)/span var(--dc);margin:0;position:relative;transform:translateY(var(--y)) rotate(var(--r));transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.print{background:#fffdf7;padding:10px 10px 0;box-shadow:0 1px 1px rgba(60,40,20,.18),0 14px 26px -12px rgba(60,40,20,.38)}
+.mount{background:#fbf6ea;padding:clamp(12px,1.6vw,20px) clamp(12px,1.6vw,20px) 0;border:1px solid rgba(120,95,60,.2);box-shadow:0 1px 1px rgba(60,40,20,.2),0 22px 34px -16px rgba(60,40,20,.45)}
+.photo-trigger{display:block;width:100%;padding:0;border:0;background:#e9dfca;cursor:zoom-in;line-height:0}
+.photo-trigger img{display:block;width:100%;height:auto}
+.spread figcaption{padding:9px 2px 11px}
+.spread figcaption p{margin:0;font:500 clamp(19px,1.6vw,23px)/1.15 'Caveat',cursive;color:var(--muted)}
+.mount figcaption p{color:var(--forest)}
+.spread>figure:hover,.spread>figure:focus-within{transform:translateY(calc(var(--y) - 5px)) rotate(0deg);z-index:3}
+.tape{position:absolute;z-index:2;top:-13px;left:50%;width:84px;height:26px;margin-left:-42px;background:rgba(232,201,121,.62);box-shadow:0 1px 2px rgba(60,40,20,.14);transform:rotate(calc(var(--r)*-2.2)) skew(-4deg);clip-path:polygon(0 8%,4% 0,8% 10%,12% 0,100% 0,96% 50%,100% 100%,8% 100%,4% 90%,0 100%)}
+.pin{position:absolute;z-index:2;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e98086,var(--red) 55%,#8e3238);box-shadow:2px 5px 6px rgba(60,40,20,.35)}
+.art-spread{padding:clamp(26px,4vw,52px) clamp(14px,3vw,44px) clamp(26px,4vw,52px) clamp(34px,5vw,76px);background:#f3ead7;box-shadow:inset 0 0 0 1px rgba(120,95,60,.14),0 18px 40px -22px rgba(60,40,20,.4);background-image:radial-gradient(circle at 22px 50%,transparent 6px,rgba(90,70,45,.5) 6.5px,transparent 7.5px);background-size:44px 38px;background-repeat:repeat-y;background-position:left top}
+.scrawl{position:absolute;font:500 clamp(20px,2vw,28px)/1.15 'Caveat',cursive;color:var(--red);pointer-events:none;max-width:200px;transform:rotate(-4deg)}
+.s1{grid-column:6/span 1;left:41%;bottom:6%}.s2{right:4%;bottom:-6px;transform:rotate(2deg);text-align:right}.s3{grid-column:11/span 2;top:6%;right:0}
+.spread>figure.pre{opacity:0;transform:translateY(calc(var(--y) - 14px)) rotate(calc(var(--r) + 2.5deg))}
+.spread>figure.pre.settled{opacity:1;transform:translateY(var(--y)) rotate(var(--r))}
+.spread>figure.pre{transition:opacity .8s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+
+/* ---------- the letter: set like a letter ---------- */
+.letter-paper{box-shadow:0 2px 2px rgba(60,40,20,.12),0 30px 60px -28px rgba(60,40,20,.5)}
+.letter-label{font:600 clamp(30px,4vw,44px)/1 'Caveat',cursive}
+.letter-content p{font:400 clamp(20px,2.3vw,23px)/1.62 'Cormorant Garamond',Georgia,serif;color:#3a3128;max-width:34em}
+.letter-content .letter-salutation{font:600 clamp(30px,3.6vw,38px)/1.2 'Caveat',cursive;color:var(--ink)}
+.letter-content .letter-signoff{font:600 36px/1 'Caveat',cursive;color:var(--red)}
+.postscript-message p{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,2.3vw,23px);line-height:1.6}
+
+/* ---------- final scene + footer ---------- */
+.final-bottom,.footer{font:500 14px/1.4 'DM Sans',sans-serif;letter-spacing:0;text-transform:none}
+.final-bottom a{color:var(--red)}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px clamp(18px,4vw,56px);color:var(--muted)}
+.footer #secret-button{font:600 22px/1 'Caveat',cursive;color:var(--red);background:none;border:0;cursor:pointer;padding:10px}
+
+/* ---------- photo viewer ---------- */
+.photo-lightbox[open]{animation:lbin .35s ease both}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
+.lightbox-topline{font:500 20px/1 'Caveat',cursive;letter-spacing:0;text-transform:none}
+.lightbox-topline *{letter-spacing:0}
+.lightbox-hint{font:500 13px/1 'DM Sans',sans-serif;letter-spacing:0;text-transform:none;opacity:.7}
+.lightbox-figure img{opacity:0;transition:opacity .35s ease;background:rgba(255,255,255,.04);touch-action:pan-y}
+.lightbox-figure img.ready{opacity:1}
+.lightbox-nav,.lightbox-close{min-width:48px;min-height:48px}
+
+/* ---------- small screens: staggered, never crowded ---------- */
+@media (max-width:900px){
+  .sb-head{grid-template-columns:1fr}
+  .hero-art-wrap{min-height:430px;margin-top:8px}
+  .hero-tiger{width:min(82vw,420px)}
+  .hand-note.note-top{top:0;right:2%}.hand-note.note-bottom{bottom:0;left:2%}
+  .hf-a{left:2%;top:0}.hf-b{right:0}
+}
+@media (max-width:700px){
+  .spread{grid-template-columns:repeat(6,minmax(0,1fr));gap:34px 6px}
+  .spread>figure{grid-column:var(--ms)/span var(--mc)}
+  .s1,.s2,.s3{position:static;grid-column:2/span 5;max-width:none;justify-self:end}
+  .art-spread{padding-left:clamp(26px,9vw,44px);background-size:44px 34px}
+  .tape{width:64px;margin-left:-32px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .flower-svg .fl{transform:none;opacity:1}
+  .hero-sprig path{opacity:1;stroke-dashoffset:0}
+  .spread>figure.pre{opacity:1;transform:translateY(var(--y)) rotate(var(--r))}
+}
+
+/* fixes from first review pass */
+.archive-item{grid-template-columns:1fr auto;gap:12px}
+.hand-note.note-bottom{left:-4%;bottom:-5%}
+.hand-note.note-top{top:2%;right:-1%}
+.s1{left:3%;bottom:14%}
+.art-spread{padding-bottom:clamp(60px,7vw,92px)}.s2{bottom:18px;right:5%}
+.letter-content p.letter-salutation{font:600 clamp(32px,4vw,40px)/1.2 'Caveat',cursive}
+.letter-content p.letter-signoff{font:600 38px/1 'Caveat',cursive}

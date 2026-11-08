@@ -1,32 +1,32 @@
 const archiveEntries = {
   tea: {
-    title: 'Official Tea Department',
+    title: 'Tea, both kinds',
     note: 'Confidentiality level: questionable.',
-    body: "Some people collect memories. You collect tea, conversations, and classified information about everyone else's lives.",
+    body: "Actual tea, and the other kind. You have strong opinions on both.",
     artwork: `<svg viewBox="0 0 160 140" aria-hidden="true"><g fill="none" stroke="#665b4c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M47 58 H111 L105 104 Q80 116 55 104Z" fill="#fff8eb"/><path d="M111 68 H123 Q145 69 137 90 Q132 102 109 97"/><path d="M42 112 Q80 124 118 112"/><path d="M67 48 C57 37 73 32 65 19 M84 49 C75 39 91 33 84 18 M99 49 C91 41 104 35 99 26" stroke="#b77b72" stroke-width="1.7"/><path d="M55 66 H102" stroke="#c56f69" stroke-width="1.5"/></g><ellipse cx="79" cy="112" rx="49" ry="8" fill="#bba98f" opacity=".22"/></svg>`,
   },
   baking: {
-    title: 'The Unexpected Bakery Era',
-    note: 'Management has declined to comment.',
-    body: "The sudden baking-and-cooking expansion is still being investigated. From intimidatingly independent to running a whole bakery department. Character development, apparently.",
+    title: 'The baking era',
+    note: 'Nobody saw it coming. Least of all me.',
+    body: "The sudden baking-and-cooking era. One day it was just a rumour, the next there were cinnamon rolls. Character development, apparently.",
     artwork: `<svg viewBox="0 0 160 140" aria-hidden="true"><g stroke="#665b4c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M35 82 Q80 68 126 82 L119 111 Q80 124 42 111Z" fill="#d9b18a"/><path d="M42 84 Q80 95 119 84" fill="none"/>${[56, 79, 102].map((x) => `<g><circle cx="${x}" cy="78" r="13" fill="#c98961"/><circle cx="${x-4}" cy="75" r="1.5" fill="#705542" stroke="none"/><circle cx="${x+4}" cy="81" r="1.5" fill="#705542" stroke="none"/></g>`).join('')}<path d="M111 40 Q123 26 130 38 M114 44 Q122 54 128 44 M119 42 L93 69 M27 50 L44 37 L56 50" fill="none"/></g><ellipse cx="80" cy="119" rx="52" ry="7" fill="#bba98f" opacity=".2"/></svg>`,
   },
   tiger: {
-    title: 'Softness.exe',
+    title: 'Tiger cub, flowers',
     note: 'All bite. Some bloom.',
-    body: "Strong-willed, stubborn, quietly chaotic, and a bit softer than you first let on. The tiger-and-flower combination does make a lot of sense, ngl.",
+    body: "A tiger cub with flowers, permanently. Strong-willed, stubborn, and a bit softer than you let on. Honestly checks out.",
     artwork: `<img class="archive-tiger" src="art/tiger-hibiscus.png" alt="Ink illustration of a tiger cub with hibiscus flowers">`,
   },
   music: {
-    title: 'Musical Department',
+    title: 'The playlists',
     note: 'Chatpate songs are a lifestyle.',
-    body: "Your playlists probably have more plot twists than a Bollywood film. One minute we're fine, next minute the song choice is a full personality statement.",
+    body: "Loud, dramatic and unapologetically chatpate. The song choice is a full personality statement and I have no complaints.",
     artwork: `<svg viewBox="0 0 160 140" aria-hidden="true"><g stroke="#665b4c" stroke-width="2.2" stroke-linejoin="round"><rect x="42" y="23" width="76" height="99" rx="7" fill="#7f8c73"/><rect x="51" y="33" width="58" height="38" rx="2" fill="#e8dfc9"/><path d="M60 49 H100 M60 58 H88" stroke="#a66b64" stroke-width="2"/><circle cx="80" cy="91" r="14" fill="#e6d6b5"/><circle cx="80" cy="91" r="4" fill="#756a58"/><circle cx="58" cy="91" r="3" fill="#e6d6b5"/><circle cx="102" cy="91" r="3" fill="#e6d6b5"/></g><path d="M118 40 Q136 28 139 44 M119 49 Q131 43 133 55" fill="none" stroke="#b66d68" stroke-width="2" stroke-linecap="round"/><ellipse cx="80" cy="125" rx="44" ry="6" fill="#bba98f" opacity=".2"/></svg>`,
   },
   lore: {
-    title: 'Classified Information',
+    title: 'Need-to-know',
     note: 'Your secrets are safe. Mostly.',
-    body: "Every conversation somehow comes with three plot twists, two unexpected revelations, and one person who absolutely should not have been trusted.",
+    body: "Tea and lore, mostly. What gets said here stays here. Mostly.",
     artwork: `<svg viewBox="0 0 160 140" aria-hidden="true"><path d="M30 44 L80 79 L130 44" fill="none" stroke="#665b4c" stroke-width="2.3"/><path d="M30 44 H130 V110 H30Z" fill="#eee1c9" stroke="#665b4c" stroke-width="2.3" stroke-linejoin="round"/><path d="M30 110 L70 73 M130 110 L90 73" fill="none" stroke="#a47769" stroke-width="1.7"/><circle cx="80" cy="82" r="10" fill="#bd6664" stroke="#93514f" stroke-width="1.5"/><path d="M80 72 V92 M70 82 H90" stroke="#f2d9ba" stroke-width="1"/></svg>`,
   },
 }
